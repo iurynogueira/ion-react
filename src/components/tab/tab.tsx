@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BorderDirection } from '../../core/types/directions';
 import { SizeType } from '../../core/types/size';
 import IonBadge, { BadgeProps } from '../badge/badge';
 import IonIcon from '../icons/icons';
@@ -11,7 +12,7 @@ type TabSizes = Exclude<SizeType, 'xs'>;
 
 export type TabProps = {
   label: string;
-  direction?: string;
+  direction?: BorderDirection;
   size?: TabSizes;
   selected?: boolean;
   disabled?: boolean;
