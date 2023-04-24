@@ -29,7 +29,7 @@ export function getFillBgFontBorderColors({
   borderColor,
   svgFillColor,
 }: StyleProps) {
-  let styles: ColorStyleResponse = {
+  const styles: ColorStyleResponse = {
     backgroundColor: backgroundColor,
     color: fontColor,
     border: `1px solid ${borderColor}`,

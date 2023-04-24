@@ -54,13 +54,13 @@ const Status = {
 } as const;
 
 const LineDraw = ({ type, status, stepNumber, steps }: StepLine) => {
-  const beforeStepIsChecked = (stepNumber: number = 0): boolean => {
+  const beforeStepIsChecked = (stepNumber = 0): boolean => {
     return (
       steps[stepNumber - 2] && steps[stepNumber - 2].status === Status.checked
     );
   };
 
-  const afterStepIsChecked = (stepNumber: number = 0): boolean => {
+  const afterStepIsChecked = (stepNumber = 0): boolean => {
     if (status && status === Status.checked) return true;
     return (
       steps[stepNumber + 2] && steps[stepNumber + 2].status !== Status.default
@@ -169,7 +169,7 @@ export const IonSteps = ({
   };
 
   const generateIndexsForStep = (): void => {
-    let stepsCopy = stepsOriginals.slice();
+    const stepsCopy = stepsOriginals.slice();
     stepsCopy.forEach((step: StepType, index: number) => {
       step.stepNumber = index + 1;
     });
